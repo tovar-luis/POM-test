@@ -11,11 +11,13 @@ public class Login_Test {
 	
 	private WebDriver driver;
 	LogInPage logInPage;
+	ProfilePage profilePage;
 	
 	@Before
 	public void setUp(){
 		logInPage = new LogInPage(driver);
 		driver = logInPage.chromeDriverConnection();
+		profilePage = new ProfilePage(driver);
 		logInPage.visit("https://demoqa.com/login/");
 	}
 	
@@ -23,7 +25,7 @@ public class Login_Test {
 	public void test() throws InterruptedException {
 		logInPage.logIn();
 		Thread.sleep(2000);
-		//assertEquals("luistovar", logInPage.getUserNameDisplayed());
+		assertEquals("luistovar", profilePage.getUserNameDisplayed());
 	}
 	
 	@After
