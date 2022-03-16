@@ -5,7 +5,8 @@ import org.openqa.selenium.WebDriver;
 
 
 public class BookPage extends Base{
-
+	
+	//Locators for the add book button and the go to profile button
 	By addBookLocator = By.xpath("//button[text()='Add To Your Collection']");
 	By profilePageLocator = By.xpath("//span[text()='Profile']");
 	
@@ -13,6 +14,7 @@ public class BookPage extends Base{
 		super(driver);
 	}
 	
+	//Method for clicking on the add book button
 	public void addBook(){
 		if(isDisplayed(addBookLocator)){
 			click(addBookLocator);
@@ -21,6 +23,7 @@ public class BookPage extends Base{
 		}
 	}
 	
+	//Method for clicking on the profile button
 	public void goToProfilePage(){
 		if(isDisplayed(profilePageLocator)){
 			click(profilePageLocator);

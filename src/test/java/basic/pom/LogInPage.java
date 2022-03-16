@@ -5,15 +5,16 @@ import org.openqa.selenium.WebDriver;
 
 public class LogInPage extends Base{
 
+	//Locators for the username and password fields, and the login button 
 	By userLocator = By.cssSelector("#userName");
 	By passLocator = By.cssSelector("#password");
 	By signInLocator = By.id("login");
-	By homePageLocator = By.id("userName-value");
 	
 	public LogInPage(WebDriver driver) {
 		super(driver);
 	}
 	
+	//Method for loging into the DemoQA website with the specified credentials
 	public void logIn() throws InterruptedException {
 		if(isDisplayed(userLocator)){
 			type("luistovar", userLocator);
